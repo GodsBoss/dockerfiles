@@ -1,9 +1,12 @@
-FROM golang:1.10.3-alpine3.7 AS build
+ARG GOLANG_VERSION
+ARG ALPINE_VERSION
+FROM golang:${GOLANG_VERSION}-alpine${ALPINE_VERSION} AS build
 RUN apk add --update-cache \
   git
 RUN go get -u -v golang.org/x/tools/cmd/godoc
 
-FROM alpine:3.7
+ARG ALPINE_VERSION
+FROM alpine:${ALPINE_VERSION}
 LABEL maintainer=godsboss@gmx.de
 EXPOSE 6060
 COPY --from=build /usr/local/go/src /usr/local/go/src
