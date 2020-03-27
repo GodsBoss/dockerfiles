@@ -12,4 +12,5 @@ EXPOSE 6060
 COPY --from=build /usr/local/go/src /usr/local/go/src
 COPY --from=build /usr/local/go/doc /usr/local/go/doc
 COPY --from=build /go/bin/godoc /usr/bin/godoc
-ENTRYPOINT ["/usr/bin/godoc", "-http", ":6060", "-index"]
+ENTRYPOINT ["/usr/bin/godoc"]
+CMD ["-http", ":6060", "-index"]
