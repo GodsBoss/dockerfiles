@@ -6,7 +6,7 @@ RUN apk add --update-cache \
 RUN go get -u -v golang.org/x/tools/cmd/godoc
 
 ARG ALPINE_VERSION
-FROM alpine:${ALPINE_VERSION}
+FROM golang:${GOLANG_VERSION}-alpine${ALPINE_VERSION}
 LABEL maintainer=godsboss@gmx.de
 EXPOSE 6060
 COPY --from=build /usr/local/go/src /usr/local/go/src
