@@ -1,4 +1,5 @@
-FROM debian:sid-20200908
+ARG base_image
+FROM $base_image
 
 RUN \
   apt-get update && \
