@@ -9,4 +9,4 @@ We don't use version tags here because the ongoing development branch for this h
 
 ## Example usage
 
-    docker run --rm -it -v ${PWD}:/home/godev/project godsboss/go2go -brackets test
+    docker run --rm -it -v ${PWD}:/home/godev/project --workdir /home/godev/project godsboss/go2go -brackets test
